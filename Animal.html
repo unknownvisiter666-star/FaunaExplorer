@@ -1,0 +1,1064 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World of Animals - Comprehensive Animal Encyclopedia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        .animal-card {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .animal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+        }
+        
+        .hero-image {
+            height: 70vh;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .search-container {
+            backdrop-filter: blur(5px);
+            border-radius: 25px;
+            padding: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-image {
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-green-700 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold">Fauna<span class="text-yellow-300">Explorer</span></div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#mammals" class="hover:text-yellow-300">Mammals</a>
+                    <a href="#birds" class="hover:text-yellow-300">Birds</a>
+                    <a href="#reptiles" class="hover:text-yellow-300">Reptiles</a>
+                    <a href="#aquatic" class="hover:text-yellow-300">Aquatic Life</a>
+                    <a href="#insects" class="hover:text-yellow-300">Insects</a>
+                </div>
+                <button class="md:hidden">☰</button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero-image">
+        <img src="https://placehold.co/1920x1080" alt="Panoramic view of diverse wildlife interacting in a lush jungle ecosystem at golden hour" class="absolute w-full h-full object-cover z-0" />
+        <div class="text-center z-10 px-4 w-full">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Discover Earth's <span class="text-yellow-300">Magnificent</span> Wildlife</h1>
+            <p class="text-xl text-white mb-8 max-w-2xl mx-auto">Explore comprehensive information about 1000+ animal species from every habitat on Earth</p>
+            <div class="search-container bg-white bg-opacity-20 max-w-2xl mx-auto">
+                <div class="flex">
+                    <input type="text" placeholder="Search animals..." class="flex-grow px-4 py-2 rounded-l-full focus:outline-none">
+                    <button class="bg-yellow-400 text-gray-800 px-6 py-2 rounded-r-full font-medium hover:bg-yellow-500">Search</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Welcome Section -->
+        <section class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Welcome to FaunaExplorer</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Our planet is home to an astonishing variety of animal life. From the microscopic to the enormous, animals inhabit every corner of Earth. Dive into our comprehensive database to learn about their habitats, behaviors, diets, and conservation status.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-green-600 text-4xl mb-4">8.7M+</div>
+                    <h3 class="text-xl font-semibold mb-2">Animal Species</h3>
+                    <p class="text-gray-600">Estimated total number of animal species on Earth (known and unknown)</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-green-600 text-4xl mb-4">1,000+</div>
+                    <h3 class="text-xl font-semibold mb-2">Featured Species</h3>
+                    <p class="text-gray-600">Comprehensive profiles with high-quality images and detailed information</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-green-600 text-4xl mb-4">100+</div>
+                    <h3 class="text-xl font-semibold mb-2">Conservation Partners</h3>
+                    <p class="text-gray-600">Working together to protect endangered species and their habitats</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Mammals Section -->
+        <section id="mammals" class="mb-16">
+            <div class="category-header px-6 py-3 mb-8">
+                <h2 class="text-2xl font-bold">Mammals</h2>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- African Lion -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://placehold.co/800x600" alt="Majestic African lion with golden brown fur standing on savannah rocks surveying his territory at sunset" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded">Vulnerable</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">African Lion</h3>
+                        <p class="text-gray-600 mb-3">Panthera leo. The second-largest cat in the world with social structures unlike any other feline species.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Africa</span>
+                            <span>Savannah</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Giant Panda -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://placehold.co/800x600" alt="Giant panda sitting in bamboo forest munching on green bamboo shoots with cub nearby" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-red-600 text-white text-xs px-2 py-1 rounded">Endangered</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Giant Panda</h3>
+                        <p class="text-gray-600 mb-3">Ailuropoda melanoleuca. This bamboo-eating bear is China's national treasure and conservation icon.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>China</span>
+                            <span>Bamboo Forest</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bottlenose Dolphin -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://placehold.co/800x600" alt="Group of bottlenose dolphins jumping synchronously in turquoise tropical ocean waters at midday" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-green-500 text-white text-xs px-2 py-1 rounded">Least Concern</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Bottlenose Dolphin</h3>
+                        <p class="text-gray-600 mb-3">Tursiops truncatus. Highly intelligent marine mammals known for their acrobatic displays and complex social behaviors.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Global Oceans</span>
+                            <span>Coastal Waters</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Birds Section -->
+        <section id="birds" class="mb-16">
+            <div class="category-header px-6 py-3 mb-8">
+                <h2 class="text-2xl font-bold">Birds</h2>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Bald Eagle -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://placehold.co/800x600" alt="Bald eagle in flight against mountain backdrop with wings fully extended showcasing white head feathers" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-green-500 text-white text-xs px-2 py-1 rounded">Least Concern</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Bald Eagle</h3>
+                        <p class="text-gray-600 mb-3">Haliaeetus leucocephalus. The national bird of the United States known for its striking white head and powerful flight.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>North America</span>
+                            <span>Coastal/Lakes</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Scarlet Macaw -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://placehold.co/800x600" alt="Scarlet macaw perched on tree branch displaying vibrant red yellow and blue plumage in rainforest" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-yellow-600 text-white text-xs px-2 py-1 rounded">Near Threatened</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Scarlet Macaw</h3>
+                        <p class="text-gray-600 mb-3">Ara macao. One of the most colorful and recognizable parrots native to Central and South American rainforests.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Central/South America</span>
+                            <span>Tropical Forest</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Emperor Penguin -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://placehold.co/800x600" alt="Group of emperor penguins huddling together against Antarctic blizzard with chicks nestled between adults" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-yellow-600 text-white text-xs px-2 py-1 rounded">Near Threatened</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Emperor Penguin</h3>
+                        <p class="text-gray-600 mb-3">Aptenodytes forsteri. The tallest and heaviest of all penguin species, uniquely adapted to the harsh Antarctic environment.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Antarctica</span>
+                            <span>Polar Ice</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Reptiles Section -->
+        <section id="reptiles" class="mb-16">
+            <div class="category-header px-6 py-3 mb-8">
+                <h2 class="text-2xl font-bold">Reptiles</h2>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Komodo Dragon -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://placehold.co/800x600" alt="Komodo dragon walking through dry Indonesian island terrain with forked tongue extended sensing prey" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-red-600 text-white text-xs px-2 py-1 rounded">Endangered</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Komodo Dragon</h3>
+                        <p class="text-gray-600 mb-3">Varanus komodoensis. The world's largest living lizard, found only on a few Indonesian islands.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Indonesia</span>
+                            <span>Dry Forest</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Leatherback Sea Turtle -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://placehold.co/800x600" alt="Leatherback sea turtle swimming through coral reef with sunlight filtering through ocean surface above" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded">Vulnerable</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Leatherback Sea Turtle</h3>
+                        <p class="text-gray-600 mb-3">Dermochelys coriacea. The largest of all living turtles and the fourth-heaviest modern reptile.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Tropical Oceans</span>
+                            <span>Open Ocean</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- King Cobra -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://placehold.co/800x600" alt="King cobra raised in striking position with hood expanded showcasing distinctive markings in Southeast Asian jungle" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-orange-500 text-white text-xs px-2 py-1 rounded">Species of Concern</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">King Cobra</h3>
+                        <p class="text-gray-600 mb-3">Ophiophagus hannah. The world's longest venomous snake and a revered creature in many Southeast Asian cultures.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Southeast Asia</span>
+                            <span>Rainforest</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Aquatic Life Section -->
+        <section id="aquatic" class="mb-16">
+            <div class="category-header px-6 py-3 mb-8">
+                <h2 class="text-2xl font-bold">Aquatic Life</h2>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Great White Shark -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://placehold.co/800x600" alt="Great white shark breaching ocean surface with visible triangular teeth in crystal clear water" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-yellow-600 text-white text-xs px-2 py-1 rounded">Vulnerable</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Great White Shark</h3>
+                        <p class="text-gray-600 mb-3">Carcharodon carcharias. The ocean's apex predator, essential for maintaining marine ecosystems.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Global Oceans</span>
+                            <span>Coastal Waters</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Blue Whale -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://placehold.co/800x600" alt="Blue whale surfacing in calm ocean waters with visible blowhole spray against sunset sky" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-red-600 text-white text-xs px-2 py-1 rounded">Endangered</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Blue Whale</h3>
+                        <p class="text-gray-600 mb-3">Balaenoptera musculus. The largest animal ever known to have lived on Earth.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Global Oceans</span>
+                            <span>Open Ocean</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Clownfish -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://placehold.co/800x600" alt="Clownfish swimming among colorful sea anemone tentacles on vibrant coral reef ecosystem" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-green-500 text-white text-xs px-2 py-1 rounded">Least Concern</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Clownfish</h3>
+                        <p class="text-gray-600 mb-3">Amphiprion percula. Made famous by the movie 'Finding Nemo', these fish have a symbiotic relationship with sea anemones.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Indian/Pacific Oceans</span>
+                            <span>Coral Reefs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Insects Section -->
+        <section id="insects" class="mb-16">
+            <div class="category-header px-6 py-3 mb-8">
+                <h2 class="text-2xl font-bold">Insects</h2>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Monarch Butterfly -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://placehold.co/800x600" alt="Monarch butterfly perched on purple flower with wings open showing vibrant orange and black patterns" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded">Endangered</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Monarch Butterfly</h3>
+                        <p class="text-gray-600 mb-3">Danaus plexippus. Known for their incredible annual migration spanning multiple generations.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>North America</span>
+                            <span>Various</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bullet Ant -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://placehold.co/800x600" alt="Bullet ant crawling on rainforest tree branch showcasing large mandibles and segmented body" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-green-500 text-white text-xs px-2 py-1 rounded">Not Evaluated</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Bullet Ant</h3>
+                        <p class="text-gray-600 mb-3">Paraponera clavata. Possesses the most painful sting of any insect, known to feel like being shot.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Central/South America</span>
+                            <span>Rainforest Floor</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Orchid Mantis -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://placehold.co/800x600" alt="Orchid mantis camouflaged among white flowers with pink details perfectly mimicking blossom" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-green-500 text-white text-xs px-2 py-1 rounded">Least Concern</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Orchid Mantis</h3>
+                        <p class="text-gray-600 mb-3">Hymenopus coronatus. One of nature's most beautiful examples of aggressive mimicry.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Southeast Asia</span>
+                            <span>Tropical Forests</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter Section -->
+        <section class="bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-xl p-8 mb-16">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Stay Connected with Wildlife</h2>
+                <p class="mb-6">Subscribe to our monthly newsletter for animal facts, conservation news, and exclusive content.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg text-gray-800 focus:outline-none">
+                    <button class="bg-yellow-400 text-gray-800 px-6 py-3 rounded-lg font-bold hover:bg-yellow-500 transition">Subscribe</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">FaunaExplorer</h3>
+                    <p class="text-gray-400">Dedicated to wildlife education and conservation through comprehensive animal information.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Animal Categories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Conservation Efforts</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Connect</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Instagram</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Twitter</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Facebook</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">YouTube</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Donate</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Volunteer</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Partnerships</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 FaunaExplorer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-4 right-4 bg-green-600 text-white w-12 h-12 rounded-full shadow-lg hidden">
+        ↑
+    </button>
+    
+    <script>
+        // Back to Top Button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('hidden');
+                } else {
+                    backToTopButton.classList.add('hidden');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+```
+
+🎨 **Generating images based on descriptions...**
+
+✅ **Images generated successfully! Here's your updated content:**
+
+`animals.html`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World of Animals - Comprehensive Animal Encyclopedia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        .animal-card {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .animal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+        }
+        
+        .hero-image {
+            height: 70vh;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .search-container {
+            backdrop-filter: blur(5px);
+            border-radius: 25px;
+            padding: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-image {
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-green-700 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold">Fauna<span class="text-yellow-300">Explorer</span></div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#mammals" class="hover:text-yellow-300">Mammals</a>
+                    <a href="#birds" class="hover:text-yellow-300">Birds</a>
+                    <a href="#reptiles" class="hover:text-yellow-300">Reptiles</a>
+                    <a href="#aquatic" class="hover:text-yellow-300">Aquatic Life</a>
+                    <a href="#insects" class="hover:text-yellow-300">Insects</a>
+                </div>
+                <button class="md:hidden">☰</button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero-image">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2653432a-8d88-4d45-a93e-b82e592abfbe.png" alt="Panoramic view of diverse wildlife interacting in a lush jungle ecosystem at golden hour" class="absolute w-full h-full object-cover z-0" />
+        <div class="text-center z-10 px-4 w-full">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Discover Earth's <span class="text-yellow-300">Magnificent</span> Wildlife</h1>
+            <p class="text-xl text-white mb-8 max-w-2xl mx-auto">Explore comprehensive information about 1000+ animal species from every habitat on Earth</p>
+            <div class="search-container bg-white bg-opacity-20 max-w-2xl mx-auto">
+                <div class="flex">
+                    <input type="text" placeholder="Search animals..." class="flex-grow px-4 py-2 rounded-l-full focus:outline-none">
+                    <button class="bg-yellow-400 text-gray-800 px-6 py-2 rounded-r-full font-medium hover:bg-yellow-500">Search</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Welcome Section -->
+        <section class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Welcome to FaunaExplorer</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Our planet is home to an astonishing variety of animal life. From the microscopic to the enormous, animals inhabit every corner of Earth. Dive into our comprehensive database to learn about their habitats, behaviors, diets, and conservation status.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-green-600 text-4xl mb-4">8.7M+</div>
+                    <h3 class="text-xl font-semibold mb-2">Animal Species</h3>
+                    <p class="text-gray-600">Estimated total number of animal species on Earth (known and unknown)</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-green-600 text-4xl mb-4">1,000+</div>
+                    <h3 class="text-xl font-semibold mb-2">Featured Species</h3>
+                    <p class="text-gray-600">Comprehensive profiles with high-quality images and detailed information</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-green-600 text-4xl mb-4">100+</div>
+                    <h3 class="text-xl font-semibold mb-2">Conservation Partners</h3>
+                    <p class="text-gray-600">Working together to protect endangered species and their habitats</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Mammals Section -->
+        <section id="mammals" class="mb-16">
+            <div class="category-header px-6 py-3 mb-8">
+                <h2 class="text-2xl font-bold">Mammals</h2>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- African Lion -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/48956a1f-5c9a-46be-900a-1bdac62ea5f4.png" alt="Majestic African lion with golden brown fur standing on savannah rocks surveying his territory at sunset" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded">Vulnerable</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">African Lion</h3>
+                        <p class="text-gray-600 mb-3">Panthera leo. The second-largest cat in the world with social structures unlike any other feline species.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Africa</span>
+                            <span>Savannah</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Giant Panda -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c92a94cd-874b-4dab-8008-475f789fe2b9.png" alt="Giant panda sitting in bamboo forest munching on green bamboo shoots with cub nearby" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-red-600 text-white text-xs px-2 py-1 rounded">Endangered</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Giant Panda</h3>
+                        <p class="text-gray-600 mb-3">Ailuropoda melanoleuca. This bamboo-eating bear is China's national treasure and conservation icon.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>China</span>
+                            <span>Bamboo Forest</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bottlenose Dolphin -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/928f9736-0b2b-45ba-85eb-67db8fbd222b.png" alt="Group of bottlenose dolphins jumping synchronously in turquoise tropical ocean waters at midday" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-green-500 text-white text-xs px-2 py-1 rounded">Least Concern</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Bottlenose Dolphin</h3>
+                        <p class="text-gray-600 mb-3">Tursiops truncatus. Highly intelligent marine mammals known for their acrobatic displays and complex social behaviors.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Global Oceans</span>
+                            <span>Coastal Waters</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Birds Section -->
+        <section id="birds" class="mb-16">
+            <div class="category-header px-6 py-3 mb-8">
+                <h2 class="text-2xl font-bold">Birds</h2>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Bald Eagle -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f927dd8a-77a1-4e6e-b82b-b346f7e5877a.png" alt="Bald eagle in flight against mountain backdrop with wings fully extended showcasing white head feathers" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-green-500 text-white text-xs px-2 py-1 rounded">Least Concern</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Bald Eagle</h3>
+                        <p class="text-gray-600 mb-3">Haliaeetus leucocephalus. The national bird of the United States known for its striking white head and powerful flight.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>North America</span>
+                            <span>Coastal/Lakes</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Scarlet Macaw -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f16110ba-e66c-4b45-bde6-99ac19a02b56.png" alt="Scarlet macaw perched on tree branch displaying vibrant red yellow and blue plumage in rainforest" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-yellow-600 text-white text-xs px-2 py-1 rounded">Near Threatened</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Scarlet Macaw</h3>
+                        <p class="text-gray-600 mb-3">Ara macao. One of the most colorful and recognizable parrots native to Central and South American rainforests.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Central/South America</span>
+                            <span>Tropical Forest</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Emperor Penguin -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/63160e04-21db-4c2f-a00f-ce0bbcfca911.png" alt="Group of emperor penguins huddling together against Antarctic blizzard with chicks nestled between adults" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-yellow-600 text-white text-xs px-2 py-1 rounded">Near Threatened</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Emperor Penguin</h3>
+                        <p class="text-gray-600 mb-3">Aptenodytes forsteri. The tallest and heaviest of all penguin species, uniquely adapted to the harsh Antarctic environment.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Antarctica</span>
+                            <span>Polar Ice</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Reptiles Section -->
+        <section id="reptiles" class="mb-16">
+            <div class="category-header px-6 py-3 mb-8">
+                <h2 class="text-2xl font-bold">Reptiles</h2>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Komodo Dragon -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/63a0c3f8-d914-4fc1-acdb-6de1b2e23997.png" alt="Komodo dragon walking through dry Indonesian island terrain with forked tongue extended sensing prey" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-red-600 text-white text-xs px-2 py-1 rounded">Endangered</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Komodo Dragon</h3>
+                        <p class="text-gray-600 mb-3">Varanus komodoensis. The world's largest living lizard, found only on a few Indonesian islands.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Indonesia</span>
+                            <span>Dry Forest</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Leatherback Sea Turtle -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1dd9185c-49c1-4828-9ce7-92f53d2402ae.png" alt="Leatherback sea turtle swimming through coral reef with sunlight filtering through ocean surface above" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded">Vulnerable</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Leatherback Sea Turtle</h3>
+                        <p class="text-gray-600 mb-3">Dermochelys coriacea. The largest of all living turtles and the fourth-heaviest modern reptile.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Tropical Oceans</span>
+                            <span>Open Ocean</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- King Cobra -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2058c084-d305-4e62-9cf3-b38bf09cbd95.png" alt="King cobra raised in striking position with hood expanded showcasing distinctive markings in Southeast Asian jungle" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-orange-500 text-white text-xs px-2 py-1 rounded">Species of Concern</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">King Cobra</h3>
+                        <p class="text-gray-600 mb-3">Ophiophagus hannah. The world's longest venomous snake and a revered creature in many Southeast Asian cultures.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Southeast Asia</span>
+                            <span>Rainforest</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Aquatic Life Section -->
+        <section id="aquatic" class="mb-16">
+            <div class="category-header px-6 py-3 mb-8">
+                <h2 class="text-2xl font-bold">Aquatic Life</h2>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Great White Shark -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/50807a34-c598-4c86-a363-87becea42445.png" alt="Great white shark breaching ocean surface with visible triangular teeth in crystal clear water" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-yellow-600 text-white text-xs px-2 py-1 rounded">Vulnerable</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Great White Shark</h3>
+                        <p class="text-gray-600 mb-3">Carcharodon carcharias. The ocean's apex predator, essential for maintaining marine ecosystems.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Global Oceans</span>
+                            <span>Coastal Waters</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Blue Whale -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f72f63bf-3ce7-42cb-b35a-5d5718a244f7.png" alt="Blue whale surfacing in calm ocean waters with visible blowhole spray against sunset sky" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-red-600 text-white text-xs px-2 py-1 rounded">Endangered</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Blue Whale</h3>
+                        <p class="text-gray-600 mb-3">Balaenoptera musculus. The largest animal ever known to have lived on Earth.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Global Oceans</span>
+                            <span>Open Ocean</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Clownfish -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3bf92912-13db-48f6-b072-5439f2296c23.png" alt="Clownfish swimming among colorful sea anemone tentacles on vibrant coral reef ecosystem" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-green-500 text-white text-xs px-2 py-1 rounded">Least Concern</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Clownfish</h3>
+                        <p class="text-gray-600 mb-3">Amphiprion percula. Made famous by the movie 'Finding Nemo', these fish have a symbiotic relationship with sea anemones.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Indian/Pacific Oceans</span>
+                            <span>Coral Reefs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Insects Section -->
+        <section id="insects" class="mb-16">
+            <div class="category-header px-6 py-3 mb-8">
+                <h2 class="text-2xl font-bold">Insects</h2>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Monarch Butterfly -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/142c13d5-7e43-4a9e-aac4-4e832c191640.png" alt="Monarch butterfly perched on purple flower with wings open showing vibrant orange and black patterns" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded">Endangered</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Monarch Butterfly</h3>
+                        <p class="text-gray-600 mb-3">Danaus plexippus. Known for their incredible annual migration spanning multiple generations.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>North America</span>
+                            <span>Various</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bullet Ant -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a38bc352-4da5-431f-8f58-cbbc3ebcd8aa.png" alt="Bullet ant crawling on rainforest tree branch showcasing large mandibles and segmented body" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-green-500 text-white text-xs px-2 py-1 rounded">Not Evaluated</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Bullet Ant</h3>
+                        <p class="text-gray-600 mb-3">Paraponera clavata. Possesses the most painful sting of any insect, known to feel like being shot.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Central/South America</span>
+                            <span>Rainforest Floor</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Orchid Mantis -->
+                <div class="animal-card bg-white">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a7275263-9efd-45f9-b28a-bfe04816d211.png" alt="Orchid mantis camouflaged among white flowers with pink details perfectly mimicking blossom" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="bg-green-500 text-white text-xs px-2 py-1 rounded">Least Concern</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Orchid Mantis</h3>
+                        <p class="text-gray-600 mb-3">Hymenopus coronatus. One of nature's most beautiful examples of aggressive mimicry.</p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Southeast Asia</span>
+                            <span>Tropical Forests</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter Section -->
+        <section class="bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-xl p-8 mb-16">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Stay Connected with Wildlife</h2>
+                <p class="mb-6">Subscribe to our monthly newsletter for animal facts, conservation news, and exclusive content.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg text-gray-800 focus:outline-none">
+                    <button class="bg-yellow-400 text-gray-800 px-6 py-3 rounded-lg font-bold hover:bg-yellow-500 transition">Subscribe</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">FaunaExplorer</h3>
+                    <p class="text-gray-400">Dedicated to wildlife education and conservation through comprehensive animal information.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Animal Categories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Conservation Efforts</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Connect</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Instagram</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Twitter</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Facebook</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">YouTube</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Donate</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Volunteer</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Partnerships</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 FaunaExplorer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-4 right-4 bg-green-600 text-white w-12 h-12 rounded-full shadow-lg hidden">
+        ↑
+    </button>
+    
+    <script>
+        // Back to Top Button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('hidden');
+                } else {
+                    backToTopButton.classList.add('hidden');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+```
